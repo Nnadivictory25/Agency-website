@@ -80,7 +80,6 @@ closeNav.addEventListener('click', closeNavBar)
 
 // ! MAP SEARCH FUNCTIONS
 const searchInput = document.querySelector('#locationInput')
-const changeEvent = new Event('focus')
 
 
 searchInput.addEventListener('keyup', () => {
