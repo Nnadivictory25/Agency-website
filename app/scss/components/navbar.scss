@@ -1,0 +1,58 @@
+@use '../util/breakpoints.scss' as *;
+@use '../util/functions.scss' as *;
+@use '../util/mixins.scss' as *;
+
+
+nav {
+    background-color: transparent !important;
+
+    ul {
+
+        li {
+            display: inline-block;
+            position: relative;
+
+            &:not(:first-child) {
+                &.active {
+                    &::before {
+                        content: "";
+                        z-index: 2;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -1rem;
+                        height: 2.3px;
+                        width: 100% !important;
+                        background-color: var(--white);
+                        opacity: 1;
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+
+            a {
+                @include transition(color);
+
+                &:hover {
+                    color: rgb(237, 221, 221);
+                }
+            }
+        }
+    }
+
+    .mobileNav {
+        top: -150%;
+        @include transition;
+        li {
+            @include transition(color);
+            a {
+                display: block !important;
+                @include transition(color);
+
+                &:hover {
+                    color: rgb(92, 92, 92);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@use '../util/breakpoints.scss' as *;
+@use '../util/functions.scss' as *;
+@use '../util/mixins.scss' as *;
+
+
+.hero {
+    background-color: black;
+    background-image: url(/images/home-bgimg.png);
+    background-position: center center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    color: white;
+
+    &__container {
+
+
+        .mapCtn {
+            #map {
+                width: min(100%, rem(408));
+                height: rem(350);
+            }
+        }
+    }
+}
