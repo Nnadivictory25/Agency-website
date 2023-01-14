@@ -32,14 +32,8 @@
 </head>
 
 <body onload="initMap()">
-  <!--  -->
-
-  <!-- <div id="map" style="height: 300px; width: 300px; float: right;"></div>
-  <br>
-  <input id="search-input" type="text" placeholder="Search Location">
-  <button onclick="onSearch()">Search</button> -->
-    <section id="hero" class="hero relative px-6 lg:px-28">
-      <nav class="flex justify-between items-center relative pt-7">
+    <section id="hero" class="hero relative">
+      <nav class="flex justify-between items-center relative pt-3 px-6 lg:px-28">
         <ul class="hide-for-mobile flex items-baseline gap-x-10">
           <li class="mr-56"><a href="#"><img src="./images/logo 1.png" alt="Logo"></a></li>
           <li class="font-medium active"><a href="#">Home</a></li>
@@ -63,21 +57,21 @@
         <article class="closeNav hidden hide-for-desktop" aria-hidden="true"><i class="bi bi-x-circle text-2xl"></i></article>
 
       </nav>
-      <hr class="bg-white absolute w-[95%] lg:w-[83.8%] mx-auto inset-x-0 top-[5.5rem] lg:top-[6.25rem] h-[1px]">
+      <hr class="bg-white absolute w-[95%] lg:w-[83.8%] mx-auto inset-x-0 top-[5.5rem] lg:top-[5.25rem] h-[1px]">
 
-      <div class="hero__container container grid grid-cols-1 lg:grid-cols-2 mt-20 gap-y-10">
+      <div class="hero__container container grid grid-cols-1 lg:grid-cols-2 pt-20 gap-y-10 px-6 lg:pl-20 gap-x-5 pb-20 mx-auto">
 
-        <h1 class="text-4xl font-bold capitalize lg:pr-32 lg:text-left self-center">
+        <h1 class="text-4xl font-bold capitalize lg:pr-32 lg:text-left self-center leading-normal">
           The most affortable place to stay in the san franciso bay area
         </h1>
 
         <div class="mapCtn">
-          <div id="map" class="rounded-md shadow-md"></div>
-          <div class="searchBar">
-            <div class="searchBar__items">
-              <div class="dropdown">All types <i class="bi bi-chevron-down"></i></div>
-              <input class="text-black" type="text" name="location" id="locationInput" value="Neighborhood">
-              <div class="searchIcon"><i class="bi bi-search"></i></div>
+          <div id="map" class="rounded-md shadow-lg"></div>
+          <div class="searchBar flex bg-white text-black mt-5 rounded-md shadow-lg px-4 py-4">
+            <div class="searchBar__items flex w-full">
+              <div class="dropdown py-4 px-3 w-[33%] font-medium text-center capitalize rounded-l-md">All types <i class="bi bi-chevron-down font-semibold"></i></div>
+              <input class="text-black py-4 px-3 w-[50%] font-medium" type="text" name="location" id="locationInput" placeholder="Neighborhood">
+              <div onclick="searchCountry()" class="searchIcon w-[19%] h-full grid place-content-center rounded-r-md"><i class="bi bi-search"></i></div>
             </div>
           </div>
         </div>

@@ -39,7 +39,6 @@ async function getLatLng(address) {
   // Check if the request was successful and if there are any results
   if (data.features && data.features.length > 0) {
     // Get the first result's coordinates
-    console.log(data);
     const location = data.features[0].center;
     return { lat: location[1], lng: location[0] };
   } else {
@@ -48,13 +47,6 @@ async function getLatLng(address) {
   }
 }
 
-function onSearch() {
-  const address = document.getElementById("search-input").value;
-  getLatLng(address).then((location) => {
-    marker.setLngLat(location);
-    map.panTo(location);
-  });
-}
 
 
 //! MOBILE NAVBAR TOGGLE FUNCTION
@@ -84,3 +76,34 @@ listItems.forEach(li => {
 
 openNav.addEventListener('click', openNavBar)
 closeNav.addEventListener('click', closeNavBar)
+
+
+// ! MAP SEARCH FUNCTIONS
+const searchInput = document.querySelector('#locationInput')
+const changeEvent = new Event('focus')
+
+
+searchInput.addEventListener('keyup', () => {
+  document.querySelector('.mapboxgl-ctrl-geocoder--input').value = searchInput.value
+  document.querySelector('.mapboxgl-ctrl-geocoder--input').focus()
+})
+
+setTimeout(() => {
+  document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('change', () => {
+    searchInput.value =  document.querySelector('.mapboxgl-ctrl-geocoder--input').value
+  })
+  document.querySelector('.mapboxgl-ctrl-geocoder--input').addEventListener('keyup', () => {
+    searchInput.value =  document.querySelector('.mapboxgl-ctrl-geocoder--input').value
+  })
+}, 1000);
+
+
+
+
+function searchCountry() {
+  const address = searchInput.value;
+  getLatLng(address).then((location) => {
+    marker.setLngLat(location);
+    map.panTo(location);
+  });
+}
