@@ -54,18 +54,21 @@ const mobileNav = document.querySelector('.mobileNav')
 const openNav = document.querySelector('.openNav')
 const closeNav = document.querySelector('.closeNav')
 const listItems = Array.from(document.querySelectorAll('.mobileLi'))
+const body = document.querySelector('body')
 
 
 const openNavBar = () => {
   mobileNav.style.top = '5rem';
   openNav.classList.toggle('hidden')
   closeNav.classList.toggle('hidden')
+  body.classList.toggle('noScroll')
 }
 
 const closeNavBar = () => {
   mobileNav.style.top = '-150%';
   closeNav.classList.toggle('hidden')
   openNav.classList.toggle('hidden')
+  body.classList.toggle('noScroll')
 }
 
 listItems.forEach(li => {

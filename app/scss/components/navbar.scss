@@ -43,6 +43,7 @@ nav {
     .mobileNav {
         top: -150%;
         @include transition;
+        z-index: 9;
         li {
             @include transition(color);
             a {
